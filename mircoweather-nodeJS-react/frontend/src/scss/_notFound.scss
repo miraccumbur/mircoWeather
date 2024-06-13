@@ -1,0 +1,12 @@
+@import "variables";
+
+.notFoundPage{
+    @include font-open-sans(400,normal,36px,3.6px);
+    color: #fff;
+}
+
+@media (max-width:500px){
+    .notFoundPage{
+        @include font-open-sans(400,normal,24px,2.4px);
+    }   
+}

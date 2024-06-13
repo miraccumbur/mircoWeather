@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="{{url_for('static', filename='/css/desktop/mainPage.css')}}" rel="stylesheet"/>
+<link href="{{url_for('static', filename='/css/phone/mobilePhone-mainPage.css')}}" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+<title>mircoWeather</title>
+
+</head>
+
+
+<body>
+<div id="navbar">
+    <div id="inner-navbar">
+    <label id="navbar-text">mircoWeather</label>
+    </div>
+</div>
+
+<div id="main">
+    <div id="icon-area">
+        <img id="photo" src="{{url_for('static', filename='images/Moon-cloud-fast-wind.png')}}">
+        <img id="photo" src="{{url_for('static', filename='images/Sun-cloud-angled-rain.png')}}">
+        <img id="photo" src="{{url_for('static', filename='images/Tornado.png')}}">
+        <img id="photo" src="{{url_for('static', filename='images/Sun-cloud-little-rain.png')}}">
+        <img id="photo" src="{{url_for('static', filename='images/Moon-fast-wind.png')}}">        
+    </div>
+
+    <div id="information-text">Welcome to mircoweather. mircoWeather is an application where you can get daily weather forecast and instant 
+    developing weather events as notifications via sms and mail. If you have not registered, you must register first. If you have 
+    already registered, you can log in.</div>
+
+    <div id="button-area">
+    <a href="/login"><button id="button">Log In</button></a>
+    <a href="/register"><button id="button">Sign Up</button></a>
+    </div>
+</div>
+
+<div id="footer">
+    <label id="footer-text">designed and created by mircos</label>
+</div>
+
+
+</body>
+</html>

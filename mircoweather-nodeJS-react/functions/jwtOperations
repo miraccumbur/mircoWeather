@@ -1,0 +1,33 @@
+const jwt = require('jsonwebtoken');
+const dotenv=require("dotenv")
+
+dotenv.config();
+
+const encodeToken = (logged_in_user) => {
+  let jwtSecretKey = process.env.JWT_SECRET_KEY;
+  let data = {
+    time: Date(),
+    uid: logged_in_user["localId"],
+    mail:logged_in_user["email"],
+  };
+
+  const token = jwt.sign(data, jwtSecretKey ,{expiresIn:"3d"});
+  return token
+};
+
+const decodeToken = (token)=>{
+    try {
+        let jwtSecretKey = process.env.JWT_SECRET_KEY;
+        const verified = jwt.verify(token,jwtSecretKey)
+        if(verified) return true
+        else return false
+        
+    } catch (error) {
+        return false
+    }
+}
+
+module.exports = {
+    encodeToken,
+    decodeToken
+}

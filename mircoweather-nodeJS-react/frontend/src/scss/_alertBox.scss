@@ -1,0 +1,36 @@
+@import "variables";
+
+.alertBoxSuccess{
+    @include font-open-sans(300,normal,24px,2.4px);
+    color: #B0FF9C !important;
+    width:65%;
+    text-align: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: inline-block;
+    position: relative;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.alertBoxFailed{
+    @include font-open-sans(300,normal,24px,2.4px);
+    color: #fe7e75 !important;
+    width:65%;
+    text-align: center !important;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: inline-block !important;
+    position: relative;
+    padding: 15px;
+    border-radius: 40px;
+}
+@media (max-width:500px) {
+    .alertBoxSuccess{
+        @include font-open-sans(300,normal,16px,1.6px);
+        width: 65%;
+    }
+    
+    .alertBoxFailed{
+        @include font-open-sans(300,normal,16px,1.6px);
+        width: 60%; 
+    }   
+}

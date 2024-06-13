@@ -1,0 +1,185 @@
+@import "variables";
+
+
+// logo's icon's css
+.navbar-logo-icon {
+    width: 48px;
+    margin: 0px 5px;
+  }
+  //navbar's css
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $background-black-75;
+    height: 60px;
+    width: 100%;
+    padding: 5px 0px 5px 5px;
+    position: relative;
+  }
+  // navbar's logo's css
+  .logo-div {
+      @include font-righteous(normal,normal ,24px ,2.4px );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50px;
+    color: rgba(255,255,255,0.9);
+  }
+  // navbar's right area's css
+  .navbar-right {
+      @include font-open-sans(400,normal,12px,1.2px);
+      color: rgba(255,255,255,1);
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 225px;
+      height: 60px;
+      //navbar's rights' items css
+      li{
+          width: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          height: 60px;
+          list-style: none;
+          
+          a{
+              color: #fff;
+          }
+  
+          //navbar user dropdown css
+          ul{
+              position: absolute;
+              width: 150px;
+              top:60px;
+              background-color: rgba(0,0,0,0.75);
+              display: none;
+              // display: flex;
+              // justify-content: center;
+              // flex-direction: column;
+              // align-items: center;
+              z-index: 1000;
+              padding: 5px 0px;
+              
+              // dropdown content css
+              li{
+                  width: 80%;
+                  height: 20px;
+                  position: relative;
+                  align-items: center;
+                 .div-height{
+                      height: 5px !important;
+                      width: 100%;
+                  }
+  
+                  .nameDiv{
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background-color:rgba(0,0,0,0) ;
+                      p{
+                          height: 20px;
+                          inline-size: auto;
+                          overflow:hidden;
+                          margin: 0 5px;
+                          align-items: center;
+                          text-align: center;
+                      }
+                  }
+  
+                  a{
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      
+                      p{
+                          height: 20px;
+                          inline-size: auto;
+                          overflow:hidden;
+                          margin: 0 5px;
+                          align-items: center;
+                          text-align: center;
+                      }
+                  }
+                  button{
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background-color: rgba($color: #fff, $alpha: 0);
+                      color: #fff;
+                      cursor: pointer;
+                      
+                      p{
+                          height: 20px;
+                          inline-size: auto;
+                          overflow:hidden;
+                          margin: 0 5px;
+                          align-items: center;
+                          text-align: center;
+                          color: fff;
+                      }
+                  }
+                  // user dropdown horizontal line
+                  div{
+                      align-self: center;
+                      background-color: #fff;
+                      width:100%;
+                      height: 0.5px;
+                  }
+              }
+          }
+  
+          // dropdown display none to flex
+          &:hover > ul{
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              align-items: center;
+          }
+      }
+  }
+  // user button css
+  .user-button-icon {
+    width: 12px;
+    margin: 0 5px;
+  }
+  
+  //dropdown content css
+  .dropdown-content-icon{
+      width: 16px;
+  
+  }
+@media (min-width:501px){
+    .navbar-right{
+        li{
+            ul{
+                right: 0px;
+            }
+        }
+    }
+}
+@media  (max-width:500px){
+    .navbar{
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 80px;
+    }
+    .navbar-right{
+        li{
+            height: 30px;
+            &:hover >ul{
+                top:80px;
+                position: absolute;
+            }
+        }
+    }   
+}
+

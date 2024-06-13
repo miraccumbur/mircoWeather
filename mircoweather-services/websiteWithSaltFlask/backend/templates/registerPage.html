@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="{{url_for('static', filename='/css/desktop/registerPage.css')}}" rel="stylesheet"/>
+<link href="{{url_for('static', filename='/css/phone/mobilePhone-registerPage.css')}}" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+<title>mircoWeather</title>
+
+</head>
+
+
+<body>
+<div id="navbar">
+    <div id="inner-navbar">
+    <label id="navbar-text">mircoWeather</label>
+    </div>
+</div>
+
+<div id="main">
+    <form id="form" method="POST">
+        <div id="username-div">
+            <div for="username-input" id="usernameText-div">Mail</div>
+            <input type="email" name="username-input" id="username-input">
+        </div>
+
+        <div id="password-div">
+            <div for="password-input" id="password-text-div">Password</div>
+            <input type="password" name="password-input1" id="password-input1" class="password-input" >
+        </div>
+
+        <div id="password-div">
+            <div for="password-input" id="password-text-div">Password Again</div>
+            <input onkeyup="passControl()" type="password" name="password-input2" id="password-input2" class="password-input" >
+        </div>
+        
+        <div id="password-length-message">Your password length is minimum 8 characters</div>
+        <div id="password-same-message">Passwords are not same!</div>
+
+        <button type="submit" id="login-button">Sign Up</button>
+        
+    </form>
+</div>
+
+<div id="footer">
+<label id="footer-text">designed and created by mircos</label>
+</div>
+
+<script src="{{url_for('static', filename='js/registerPage.js')}}"></script>
+
+</body>
+</html>

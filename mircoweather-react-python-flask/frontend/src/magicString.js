@@ -1,0 +1,6 @@
+export const mailAlreadyExist="The user with the provided email already exists (EMAIL_EXISTS)."
+export const inputDataIsWrong="Input data is wrong."
+export const emailIsWrong="Email is wrong."
+export const passwordIsWrong="Password is wrong."
+export const emailNotFound="EMAIL_NOT_FOUND"
+export const locationNotFound="Location is not found."

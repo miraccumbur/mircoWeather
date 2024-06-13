@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="{{url_for('static', filename='/css/desktop/userPage.css')}}" rel="stylesheet"/>
+<link href="{{url_for('static', filename='/css/phone/mobilePhone-userPage.css')}}" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+<title>mircoWeather</title>
+
+</head>
+
+
+<body>
+<div id="navbar">
+    <div id="inner-navbar">
+    <div id="left-navbar"></div>
+    <label id="navbar-text">mircoWeather</label>
+    <a id="logout" href="/logout">Log Out</a>
+    </div>
+</div>
+
+<div id="main">
+    <form id="information-form-div" method="POST" action="/changeInformation">
+        <label id="change-information-title">Change Information</label>
+        <div id="email-area-div">
+            <label for="email-area-input" id="email-area-text">The e-mail address where you want to receive notifications.</label>
+            <input type="email" id="email-area-input" name="email-area-input">
+        </div>
+
+        <div id="phone-number-area-div">
+            <label for="phone-number-area-input" id="phone-number-area-text">The phone number where you want to receive notifications.</label>
+            <input type="text" id="phone-number-area-input" name="phone-number-area-input">
+        </div>
+
+        <div id="type-selection-area-div">
+            <label for="type-selection-select" id="type-selection-text-main-div">
+                <div id="type-selection-text-1-div">Select the types for which you want
+ to receive notifications. </div>
+                <div id="type-selection-text-2-div">(Premium membership is required for sms.)</div>
+            </label>
+            <select name="type-selection-select" id="type-selection-select">
+                <option value="E-mail">E-mail</option>
+                <option value="SMS">SMS</option>
+                <option value="E-mail,SMS">E-mail & SMS</option>
+            </select>
+        </div>
+
+        <button type="submit" id="change-information-button">Change Information</button>
+
+    </form>
+
+    <form id="change-location-form-div" method="Post" action="/changeLocation">
+        <label id="change-location-title">Change Location</label>
+        <div id="get-location-area-div">
+            <button onClick="getLocation()" id="get-current-location-button" type="button">Get Current Location</button>
+            <input name="location-display-label" id="location-display-label" readonly>
+        </div>
+        <button type="submit" id="change-location-button">Change Location</button>
+    </form>
+
+    <form id="change-password-form" method="POST" action="/changePassword">
+        <label id="change-password-title">Change Password</label>
+        <div id="old-password-area">
+            <label for="old-password-input" id="old-password-text">Enter your old password</label>
+            <input type="password "id="old-password-input" name="old-password-input">
+        </div>
+
+        <div id="new-password-area">
+            <label for="new-password-input" id="new-password-text">Enter your new password</label>
+            <input type="password" id="new-password-input" name="new-password-input">
+        </div>
+
+        <button type="submit" id="change-password-button">Change Password</button>
+
+        <a href="/forgetPassword" id="forget-password-link">Forget Password?</a>
+    </form>
+</div>
+
+<div id="footer">
+<label id="footer-text">designed and created by mircos</label>
+</div>
+
+<script src="{{url_for('static', filename='js/userPage.js')}}"></script>
+
+</body>
+</html>

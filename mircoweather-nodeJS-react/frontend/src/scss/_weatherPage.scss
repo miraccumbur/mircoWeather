@@ -1,0 +1,464 @@
+@import "variables";
+
+.weatherPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherPageMainArea {
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 600px;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.hourlyWeatherAreaForMobile {
+  display: none;
+}
+
+.mainLeft {
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  form {
+    .searchArea {
+      width: 100%;
+      height: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      button {
+        background-color: rgba(0, 0, 0, 0);
+        img {
+          width: 36px;
+        }
+      }
+
+      input {
+        @include font-open-sans(300, normal, 24px, 2.4px);
+        background-color: rgba(0, 0, 0, 0);
+        width: 600px;
+        height: 60px;
+        color: rgba(255, 255, 255, 0.85);
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+    .recomendedArea {
+      width: 100%;
+      height: 700px;
+      overflow: scroll;
+      .recomendedAreaChild {
+        @include font-open-sans(300, normal, 24px, 2.4px);
+        background-color: rgba(0, 0, 0, 0);
+        height: 50px;
+        color: rgba(255, 255, 255, 0.65);
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .currentWeatherArea {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    .area1 {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      width: 400px;
+      height: 150px;
+      img {
+        width: 96px;
+        align-self: center;
+      }
+      p {
+        @include font-open-sans(300, normal, 96px, 9.6px);
+        color: rgba(255, 255, 255, 0.85);
+      }
+    }
+    .area2 {
+      @include font-open-sans(300, normal, 20px, 1.5px);
+      width: 400px;
+      height: 30px;
+      color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+    }
+    .area3 {
+      width: 400px;
+      height: 120px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      div {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 120px;
+        height: 100px;
+        img {
+          height: 32px;
+        }
+        p {
+          @include font-open-sans(300, normal, 16px, 1.4px);
+          color: rgba(255, 255, 255, 0.85);
+          small {
+            @include font-open-sans(300, normal, 8px, 0.6px);
+          }
+        }
+
+        .wind-img {
+          width: 16px;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+  .dailyWeatherArea {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .changeButton {
+      width: 50px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(0, 0, 0, 0);
+        img {
+          width: 32px;
+        }
+      }
+    }
+  }
+}
+.mainRight {
+  width: 300px;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .changeButton {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      img {
+        width: 32px;
+      }
+    }
+  }
+}
+
+.dailyAndHourlyWeather {
+  width: 300px;
+  height: 200px;
+  div {
+    height: 80px;
+  }
+  .area1-daily {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      width: 64px;
+    }
+    p {
+      @include font-open-sans(300, normal, 36px, 3.6px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+    }
+  }
+
+  .area2-daily {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100px;
+      height: 80px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+      p {
+        @include font-open-sans(300, normal, 14px, 1.4px);
+        small {
+          @include font-open-sans(300, normal, 8px, 0.8px);
+        }
+      }
+      .wind-img-daily {
+        width: 12px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  p {
+    @include font-open-sans(300, normal, 14px, 1.4px);
+    color: rgba(255, 255, 255, 0.85);
+    height: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .weatherPageMainArea {
+    width: 700px;
+  }
+
+  .mainLeft {
+    width: 400px;
+    form {
+      .searchArea {
+        width: 100%;
+        input {
+          width: 300px;
+        }
+      }
+    }
+  }
+  .daily2 {
+    display: none;
+  }
+}
+
+@media (max-width: 712px) {
+  .weatherPageMainArea {
+    width: 400px;
+    height: 800px;
+  }
+  .mainLeft{
+      height: 800px;
+  }
+  .mainRight {
+    display: none;
+  }
+  .hourlyWeatherAreaForMobile{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .changeButton {
+      width: 50px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(0, 0, 0, 0);
+        img {
+          width: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .weatherPageMainArea {
+    height: 550px;
+    width: 300px;
+  }
+  .hourlyWeatherAreaForMobile {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .changeButton {
+      width: 50px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(0, 0, 0, 0);
+        img {
+          width: 32px;
+        }
+      }
+    }
+  }
+
+  .mainLeft {
+    width: 300px;
+    height: 550px;
+    form {
+      .searchArea {
+        width: 100%;
+        height: 50px;
+        button {
+          img {
+            width: 24px;
+          }
+        }
+
+        input {
+          @include font-open-sans(300, normal, 16px, 1.6px);
+          width: 250px;
+          height: 40px;
+        }
+      }
+      .recomendedArea {
+        width: 100%;
+        height: 500px;
+        .recomendedAreaChild {
+          @include font-open-sans(300, normal, 16px, 1.6px);
+          height: 30px;
+        }
+      }
+    }
+
+    .currentWeatherArea {
+      width: 100%;
+      height: 200px;
+      .area1 {
+        width: 300px;
+        height: 100px;
+        img {
+          width: 64px;
+        }
+        p {
+          @include font-open-sans(300, normal, 64px, 6.4px);
+        }
+      }
+      .area2 {
+        @include font-open-sans(300, normal, 16px, 1.3px);
+        width: 300px;
+        height: 30px;
+      }
+      .area3 {
+        width: 300px;
+        height: 70px;
+        div {
+          width: 100px;
+          height: 70px;
+          img {
+            height: 24px;
+          }
+          p {
+            @include font-open-sans(300, normal, 12px, 1.2px);
+            small {
+              @include font-open-sans(300, normal, 8px, 0.6px);
+            }
+          }
+
+          .wind-img {
+            width: 12px;
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+    .dailyWeatherArea {
+      width: 100%;
+      height: 150px;
+
+      .changeButton {
+        width: 25px;
+        height: 150px;
+        button {
+          width: 25px;
+          height: 25px;
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .hourlyWeatherAreaForMobile {
+    width: 100%;
+    height: 150px;
+    .changeButton {
+      width: 25px;
+      height: 150px;
+      button {
+        width: 25px;
+        height: 25px;
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+  .dailyAndHourlyWeather{
+    width: 250px;
+    height: 150px;
+    div {
+      height: 60px;
+    }
+    .area1-daily {
+      img {
+        width: 48px;
+      }
+      p {
+        @include font-open-sans(300, normal, 24px, 2.4px);
+        height: 60px;
+      }
+    }
+  
+    .area2-daily {
+      div {
+        width: 80px;
+        height: 60px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+        p {
+          @include font-open-sans(300, normal, 12px, 1.2px);
+          small {
+            @include font-open-sans(300, normal, 6px, 0.5px);
+          }
+        }
+        .wind-img-daily {
+          width: 8px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    p {
+      @include font-open-sans(300, normal, 12px, 1.2px);
+      height: 15px;
+    }
+  }
+}

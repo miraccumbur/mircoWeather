@@ -1,0 +1,20 @@
+$background-black-75:rgba(0,0,0,0.75);
+$background-black-50:rgba(0,0,0,0.50);
+
+@mixin font-open-sans($weight,$style,$size,$space) {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:$weight;
+    font-style: $style;
+    font-size: $size;
+    letter-spacing:$space ;
+}
+
+@mixin font-righteous($weight,$style,$size,$space) {
+    font-family: 'Righteous', sans-serif;
+    font-weight:$weight;
+    font-style: $style;
+    font-size: $size;
+    letter-spacing:$space ;
+    
+}
+
